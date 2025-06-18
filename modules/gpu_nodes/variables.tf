@@ -1,0 +1,9 @@
+variable "cluster_id" {}
+variable "gpu_platform" {}
+variable "zone" {}
+variable "min_gpu_replicas" {}
+variable "max_gpu_replicas" {}
+variable "gpu_memory" {}
+variable "gpu_cores" {}
+variable "gpus" {}
+variable "k8s_version" {}

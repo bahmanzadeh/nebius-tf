@@ -1,0 +1,20 @@
+│       package_update: true
+│       package_upgrade: true
+│       packages:
+│         - curl
+│         - wget
+│         - nfs-common
+│         - unzip
+│       write_files:
+│         - path: /opt/install-kuberay.sh
+│           permissions: '0755'
+│           owner: root
+│           content: |
+│             #!/bin/bash
+│             echo "Installing KubeRay"
+│             helm repo add kuberay https://ray-project.github.io/kuberay-helm/
+│             helm repo update
+│             helm install ray-cluster kuberay/ray-cluster
+│       runcmd:
+│         - bash /opt/install-kuberay.sh
+│
